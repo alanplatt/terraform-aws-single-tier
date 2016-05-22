@@ -19,6 +19,6 @@ variable "aws_amis" {
 
 variable "web-instances" {
   default = {
-    "count" = 4
+    "count" = 2
   }
 }
