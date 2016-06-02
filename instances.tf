@@ -12,14 +12,16 @@ resource "aws_instance" "web" {
   subnet_id = "${aws_subnet.default.id}"
 
   tags {
-    Name = "${format("web-%d", count.index + 1)}"
+    Name = "${format("web-%d", count.index)}"
   }
 
   provisioner "remote-exec" {
     inline = [
       "sudo apt-get -y update",
       "sudo apt-get -y install nginx",
-      "sudo service nginx start"
+      "sudo service nginx start",
+      "sudo chmod -R 777 /usr/share/nginx/html",
+      "echo ${count.index} >> /usr/share/nginx/html/index.html"
     ]
   }
 }
