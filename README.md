@@ -1,6 +1,8 @@
 # terraform-aws-single-tier
 Simple single tier aws example
 
+![terraform-aws-single-tier-diagram](https://www.gliffy.com/go/publish/image/10692371/L.png)
+
 # requires
 ```
 cat > ~/.aws/credentials << EOF
